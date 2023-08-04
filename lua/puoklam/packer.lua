@@ -21,7 +21,9 @@ return require('packer').startup(function(use)
 	-- 		vim.cmd('colorscheme rose-pine')
 	-- 	end
 	-- })
-	use('folke/tokyonight.nvim')
+	-- use('folke/tokyonight.nvim')
+	-- use('rebelot/kanagawa.nvim')
+	use('sainnhe/sonokai')
 
 	use('nvim-treesitter/nvim-treesitter', {run = ':TSUpdate'})
 	use('nvim-treesitter/playground')
@@ -73,4 +75,5 @@ return require('packer').startup(function(use)
 			{'rafamadriz/friendly-snippets'},
 		}
 	}
+	use('akinsho/toggleterm.nvim')
 end)

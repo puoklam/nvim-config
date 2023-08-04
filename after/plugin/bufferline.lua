@@ -5,7 +5,40 @@ buffline.setup {
 		indicator = {
 			style = 'underline'
 		},
-		buffer_close_icon = "x"
+		show_tab_indicators = true,
+		buffer_close_icon = "x",
+		separator_style = "slope",
+		diagnostics = "nvim_lsp",
+		diagnostics_indicator = function(count, level, diagnostics_dict, context)
+			local s = " "
+			for e, n in pairs(diagnostics_dict) do
+				local sym = e == "error" and "E " or (e == "warning" and "W " or "I")
+				s = s .. n .. sym
+			end
+			return s
+		end
+	},
+	highlights = {
+		close_button_selected = {
+			bg = '#FF6188',
+			fg = '#2D2A2E',
+		},
+		buffer_selected = {
+			bg = '#FF6188',
+			fg = '#2D2A2E',
+		},
+		modified_selected = {
+			bg = '#FF6188',
+		},
+		info_diagnostic_selected = {
+			bg = '#FF6188',
+		},
+		warning_diagnostic_selected = {
+			bg = '#FF6188',
+		},
+		error_diagnostic_selected = {
+			bg = '#FF6188',
+		}
 	}
 }
 
